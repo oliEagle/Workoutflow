@@ -4,7 +4,7 @@ import {
   MessageSquare, History, Sparkles, Trophy, Play, 
   CheckCircle2, Search, ArrowRight, RefreshCw, 
   Trash2, HelpCircle, Heart, Droplet, Clock, ArrowLeft,
-  ChevronRight, Calendar, User, Zap
+  ChevronRight, Calendar, User, Zap, Settings2
 } from "lucide-react";
 import { 
   BarChart, Bar, XAxis, YAxis, CartesianGrid, 
@@ -462,7 +462,7 @@ export default function PhoneAppContent({
 
    return (
     <div className={`h-full flex flex-col bg-slate-950 text-slate-100 font-sans select-none overflow-hidden relative ${
-      os === "ios" ? "rounded-[40px]" : "rounded-[24px]"
+      os === "ios" ? "md:rounded-[40px]" : "md:rounded-[24px]"
     }`}>
       
       {/* FIRST-TIME PROFILE ONBOARDING ROUTE */}
@@ -782,9 +782,16 @@ export default function PhoneAppContent({
                 </h3>
                 <p className="text-xs text-slate-400">Let's dominate today's targets</p>
               </div>
-              <div className="text-right">
+              <div className="text-right flex flex-col items-end">
                 <span className="block text-[10px] text-slate-500 font-mono">LEVEL</span>
                 <span className="text-xs font-bold text-indigo-400">{profile.level.toUpperCase()}</span>
+                <button 
+                  onClick={() => setProfile(p => ({ ...p, onboarded: false }))}
+                  className="mt-1 flex items-center gap-1 text-[9px] font-bold text-indigo-400 hover:text-indigo-300 bg-indigo-505/10 border border-indigo-500/25 px-1.5 py-0.5 rounded cursor-pointer active:scale-95 transition-all"
+                  title="Profile settings"
+                >
+                  <Settings2 className="w-2.5 h-2.5" /> Profiel
+                </button>
               </div>
             </div>
 
