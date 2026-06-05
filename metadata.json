@@ -1,0 +1,6 @@
+{
+  "name": "WorkoutFlow",
+  "description": "An interactive AI-powered fitness tracker and workout generator styled dynamically for Android and iOS mobile preview frames.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
